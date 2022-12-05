@@ -8,6 +8,15 @@ Please note that this is all just experimental and for research purposes only.
 
 I added a basic python web server so that testing can be done to ensure data is returned.
 
+Example output: 
+
+```
+./test_server.py
+127.0.0.1 - - [05/Dec/2022 02:56:34] "OPTIONS / HTTP/1.1" 200 -
+b'{"user":[72,69,76,76,79],"pass":[72,69,76,76,79]}'
+127.0.0.1 - - [05/Dec/2022 02:56:34] "POST / HTTP/1.1" 200 -
+```
+
 ## In depth
 
 A current in-depth synopsis 
